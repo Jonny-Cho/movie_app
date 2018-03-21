@@ -6,7 +6,7 @@ class Movie extends Component{
 		return (
 			<div>
 				<MoviePoster />
-				<h1>Hello this is a movie</h1>
+				<h1>{this.props.title}</h1>
 			</div>
 		)
 	}
