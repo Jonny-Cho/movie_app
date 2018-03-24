@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './Movie.css';
 
 class Movie extends Component{
+	static propTypes = {
+		title: PropTypes.string.isRequired,
+		poster: PropTypes.string.isRequired
+	}
 	render(){
 		return (
 			<div>
@@ -13,12 +17,14 @@ class Movie extends Component{
 }
 
 class MoviePoster extends Component{
+	static propTypes = {
+		poster: PropTypes.string.isRequired
+	}
 	render(){
 		return (
 			<img src={this.props.poster} />
 		)
 	}
 }
-
 
 export default Movie;
