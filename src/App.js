@@ -22,21 +22,9 @@ const movies = [
 	}		
 ]
 
-
-
-
-
-
 class App extends Component {
-	componentWillMount(){
-		console.log('Will mount')
-	}
-	componentDidMount(){
-		console.log('Did mount')
-	}
-
   render() {
-		console.log('render')
+
     return (
       <div className="App">
         {movies.map((movie, index) => {
