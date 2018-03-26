@@ -11,6 +11,9 @@ class App extends Component {
 
 	componentDidMount(){
 		fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count')
+		.then(potato => potato.json())
+		.then(json => console.log(json))
+		.catch(err => console.log(err))
 	}
 
   render() {
