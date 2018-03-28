@@ -20,9 +20,9 @@ class App extends Component {
 			 genres={movie.genres}
 			 synopsis={movie.synopsis}
 			 />
-		})
-		return movies
-	}
+		});
+		return movies;
+	};
 
   _getMovies = async () => {
     const movies = await this._callApi();
@@ -35,15 +35,16 @@ class App extends Component {
 		return fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count')
 		.then(potato => potato.json())
 		.then(json => json.data.movies)
-		.catch(err => console.log(err))
-	}
+		.catch(err => console.log(err));
+	};
 
 	render() {
-	return (
-	  <div className="App">
-	    {this.state.movies ? this._renderMovies() : 'Loading'}
-	  </div>
-	);
+		const { movies } = this.state;
+		return (
+			<div className={movies ? "App" : "App--loading"}>
+				{movies ? this._renderMovies() : 'Loading'}
+			</div>
+		);
 	} 
 }
 
